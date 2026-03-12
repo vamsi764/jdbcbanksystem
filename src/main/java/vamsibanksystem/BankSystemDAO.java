@@ -108,6 +108,16 @@ public  class BankSystemDAO
         }
         return false;
     }
+    public ResultSet getUsers(){
+        try{
+            stmt=con.prepareStatement("select * from bank;");
+            return stmt.executeQuery();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
     public void closeConnection(){
         try{
             con.close();
